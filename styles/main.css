@@ -1,0 +1,62 @@
+
+body {
+    background-color: aquamarine;
+    
+}
+
+img.petimg{
+    position: absolute;
+top: 250px;
+right: 700px;
+width: 150px;
+height:auto;
+}
+
+ /* #image-container{
+     position: relative;
+    }  */
+    
+    .parent {
+        display: grid;
+        grid-template-columns: .5fr repeat(2, 1fr) .5fr repeat(4, 1fr) .5fr repeat(2, 1fr) .5fr;
+        grid-template-rows: repeat(9, 1fr) .5fr;
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+    
+    .div1 { grid-area: 2 / 2 / 10 / 4; }
+    .div2 { grid-area: 2 / 5 / 10 / 9; }
+    .div3 { grid-area: 2 / 10 / 6 / 12; }
+    .div4 { grid-area: 6 / 10 / 10 / 12; }
+    .div5 { grid-area: 1 / 1 / 2 / 13; }
+                        
+    
+    
+    
+/* body {
+    background-color: aquamarine;
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "column1 column2 column3"
+}
+
+header {
+    grid-area: header;
+}
+
+#friend-container {
+    grid-area: column1;
+}
+
+main {
+    grid-area: column2;
+}
+
+#pet-stats {
+    grid-area: column3;
+}
+
+/* img.petbackground{
+position: relative;
+} */
