@@ -31,8 +31,36 @@ height:auto;
     .div5 { grid-area: 1 / 1 / 2 / 13; }
                         
     
+
+
+ /** FORM CSS */
+    #modal {
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.75);
+    }
     
-    
+#sign-up{
+    background-color: #ffccff;
+    width: 500px;
+    margin: 20vh auto 0;
+}
+
+form input{
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 0.25em 0 0.5em;
+    padding: 0.25em 1em;
+}
+
+.div5{
+    display: inline;
+}
 /* body {
     background-color: aquamarine;
     display: grid;

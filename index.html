@@ -6,26 +6,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/main.css">
     <script src="./src/index.js" defer> </script>
+    <script src="./src/modal.js" defer></script>
     <title>Petto</title>
 </head>
 <body>
     <div class="div5"> 
     <header>
         <H1>Petto</H1>
+        <div id="user-div">
+            <h2 id="username"></h2>
+        </div>
     </header>
     </div>
 
     <div class="div1"> 
     <div id="friend-container">
         <h3 class="friends-heading">Available Friends</h3>
-        <ul>
+        <!-- <ul>
             <li>Lil' Stinker</li><br>
             <li>Blubby</li><br>
             <li>Shooby</li><br>
             <li>Graham</li><br>
             <li>Fezzick</li><br>
             <li>Momo</li><br>
-        </ul>
+        </ul> -->
 
     </div>
     </div>
@@ -48,7 +52,7 @@
                     <button id="action button">Play</button>
                     <button id="action button">Clean</button>
                     <button id="action button">Rest</button>
-
+                    <button id="signup">Sign Up!</button>
                 </div>
             </div>
             
@@ -75,16 +79,21 @@
         <!--add your pets here-->
         <h3>Your Pets</h3>
         <ul id="pets-container">
-            <li>Blob Lord</li>
-            <li>stevie</li>
-            <li>Mlem</li>
-
+            
         </ul>
 
     </div>
     </div>
 
     
+    <div id="modal" style="display: none;" data-action="close">
+        <form id="sign-up">
+            <h1>Sign Up!</h1>
+            <label for="name">Name</label>
+            <input type="text" name="name">
+            <input type="submit" value="Create User">
+        </form>
+    </div>
 
 
 
