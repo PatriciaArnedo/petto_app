@@ -15,9 +15,9 @@
         <H1>Petto</H1>
         <div id="user-div">
             <h2 id="username"></h2>
+            <button class="button_display" id="log-out">Log Out</button>
             <form id="log-in">
-                <label for="name">Name</label>
-                <input type="text" name="name">
+                <input type="text" name="name" placeholder="Name">
                 <input type="submit" value="Log In">
             </form>
         </div>
@@ -49,10 +49,10 @@
                 </div>
                 <div id="button-container">
                     <!--add buttons here-->
-                    <!-- <button class="button_display" id="action button">Feed</button>
+                    <button class="button_display" id="action button">Feed</button>
                     <button class="button_display" id="action button">Play</button>
                     <button class="button_display" id="action button">Clean</button>
-                    <button class="button_display" id="action button">Rest</button> -->
+                    <button class="button_display" id="action button">Rest</button>
                     <button id="signup">Sign Up!</button>
                 </div>
             </div>
@@ -94,13 +94,26 @@
     <div id="modal" style="display: none;" data-action="close">
         <form id="sign-up">
             <h1>Sign Up!</h1>
-            <label for="name">name</label>
-            <input type="text" name="name">
+            <input type="text" name="name" placeholder="Name">
             <input type="submit" value="Create User">
         </form>
     </div>
 
-
+    <div id="modal2" style="display: none;" data-action="close">
+        <form id="select-pet">
+            <h1>Choose your Petto</h1>
+            <div class="pet_form_image">
+            <input type="checkbox" name='pet1' id="pet1" data-happyimg="" data-sadimg="" data-bio="" /><label for="pet1"></label>
+            <input type="checkbox" name='pet2' id="pet2" data-happyimg="" data-sadimg="" data-bio=""/><label for="pet2"></label>
+            <input type="checkbox" name='pet3' id="pet3" data-happyimg="" data-sadimg="" data-bio=""/><label for="pet3"></label>
+            <input type="checkbox" name='pet4' id="pet4" data-happyimg="" data-sadimg="" data-bio=""/><label for="pet4"></label>
+            <input type="checkbox" name='pet5' id="pet5" data-happyimg="" data-sadimg="" data-bio=""/><label for="pet5"></label>
+            <input type="checkbox" name='pet6' id="pet6" data-happyimg="" data-sadimg="" data-bio=""/><label for="pet6"></label>  
+            </div>
+            <input type="text" name="name" placeholder="Name">
+            <input type="submit" value="Finish">
+        </form>
+    </div>
 
 </body>
 </div>

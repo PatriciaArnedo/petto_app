@@ -24,7 +24,9 @@ const petsContainerText = document.querySelector("#pets-container-text")
 const statsList = document.querySelector("#stats-list")
 const containerList = document.querySelector("#container-title")
 let displayButton = document.querySelectorAll(".button_display")
-
+const userDiv = document.querySelector("#user-div")
+const htmlBody = document.querySelector("body")
+const logOutBtn = document.querySelector("#log-out")
 
 
 
@@ -74,13 +76,14 @@ const allPetFetch = () => {
 //--------render functions----------//
 
 function renderButtons(buttonflag) {
+    
+    
     if (!buttonflag) {
         displayButton.forEach((button) => {
             button.style.display = "none"
         })
 
     } else if (buttonflag) {
-
         displayButton.forEach((button) => {
             button.style.display = ""
         })
@@ -91,6 +94,7 @@ function renderButtons(buttonflag) {
 const renderUser = ({ name }) => {
     username.textContent = name
     currentUser = true
+    logIn.innerHTML = ""
     renderButtons(currentUser)
 }
 
@@ -161,6 +165,11 @@ const renderFriend = (pet) => {
 
 //---------event handlers----------//
 
+
+logOutBtn.addEventListener("click", () => {
+       location.reload()
+    })
+
 friendList.addEventListener("click", (event) => {
     console.log(event)
     if (event.target.tagName === 'LI') {
@@ -200,6 +209,11 @@ heartIcon.addEventListener("click", () => {
 logIn.addEventListener("submit", (e) => {
     e.preventDefault()
     const userName = e.target.name.value 
+
+    if (!userName){
+        alert("Enter Username")
+    }
+    else{
     fetch(`http://localhost:3000/api/users/${userName}`)
     .then(r => r.json())
     .then(loginUser => {
@@ -216,6 +230,7 @@ logIn.addEventListener("submit", (e) => {
             
         allPetFetch()
     })
+}
 })
 //-----initialize------//
 

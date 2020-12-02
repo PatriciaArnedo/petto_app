@@ -34,7 +34,7 @@ height:auto;
 
 
  /** FORM CSS */
-    #modal {
+ #modal {
         position: fixed;
         z-index: 1;
         top: 0;
@@ -44,6 +44,22 @@ height:auto;
         background-color: rgba(0, 0, 0, 0.75);
     }
     
+    #modal2{
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.40);
+    }
+
+#select-pet{
+    background-color: #ffccff;
+    margin: 20vh auto 0;
+    width: 500px;
+}
+
 #sign-up{
     background-color: #ffccff;
     width: 500px;
@@ -53,14 +69,143 @@ height:auto;
 form input{
     display: block;
     width: 100%;
-    max-width: 500px;
-    margin: 0.25em 0 0.5em;
+    max-width: 300px;
+    margin: 0.25em auto;
     padding: 0.25em 1em;
+    text-align: center;
 }
 
 .div5{
     display: inline;
 }
+
+/* Pet selector */
+input[type=checkbox]{
+    display: none;
+}
+
+input#pet1[type=checkbox] + label{
+    background-image: url("https://i.imgur.com/gHMBdEv.gif");
+    border-color: white;
+    height: 100px;
+    width: 79px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+}
+
+input#pet1[type=checkbox]:checked + label{
+    border-color: rgb(128, 40, 54);
+    border-style: solid;
+    width: 79px;
+    height: 100px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+}
+
+input#pet2[type=checkbox] + label{
+    background-image: url("https://i.imgur.com/gHMBdEv.gif");
+    border-color: white;
+    height: 100px;
+    width: 79px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+}
+
+input#pet2[type=checkbox]:checked + label{
+    border-color: rgb(128, 40, 54);
+    border-style: solid;
+    width: 79px;
+    height: 100px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+}
+
+input#pet3[type=checkbox] + label{
+    background-image: url("https://i.imgur.com/gHMBdEv.gif");
+    border-color: white;
+    height: 100px;
+    width: 79px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+}
+
+input#pet3[type=checkbox]:checked + label{
+    border-color: rgb(128, 40, 54);
+    border-style: solid;
+    width: 79px;
+    height: 100px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+}
+
+input#pet4[type=checkbox] + label{
+    background-image: url("https://i.imgur.com/gHMBdEv.gif");
+    border-color: white;
+    height: 100px;
+    width: 79px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+}
+
+input#pet4[type=checkbox]:checked + label{
+    border-color: rgb(128, 40, 54);
+    border-style: solid;
+    width: 79px;
+    height: 100px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+}
+
+input#pet5[type=checkbox] + label{
+    background-image: url("https://i.imgur.com/gHMBdEv.gif");
+    border-color: white;
+    height: 100px;
+    width: 79px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+}
+
+input#pet5[type=checkbox]:checked + label{
+    border-color: rgb(128, 40, 54);
+    border-style: solid;
+    width: 79px;
+    height: 100px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+}
+
+input#pet6[type=checkbox] + label{
+    background-image: url("https://i.imgur.com/gHMBdEv.gif");
+    border-color: white;
+    height: 100px;
+    width: 79px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+}
+
+input#pet6[type=checkbox]:checked + label{
+    border-color: rgb(128, 40, 54);
+    border-style: solid;
+    width: 79px;
+    height: 100px;
+    display: inline-block;
+    padding: 0 0 0 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* body {
     background-color: aquamarine;
     display: grid;
