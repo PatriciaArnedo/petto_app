@@ -12,6 +12,8 @@ const petImg = document.querySelector(".petimg")
 const petTitle = document.querySelector("#pet-title")
 const actionsTitle = document.querySelector("#actions-title")
 const friendList = document.querySelector("#friend-container")
+const petList = document.querySelector("#pets-container")
+
 
 //-------fetches-------//
 
@@ -53,6 +55,7 @@ const renderUser = ({name}) => {
 const renderUserPet = (pet) => {
     let petLi = document.createElement("li")
     petLi.textContent = pet.name
+    petLi.dataset.id = pet.id
     userPets.append(petLi)
 }
 
@@ -90,6 +93,14 @@ friendList.addEventListener("click", (event) => {
     }
 })
 
+petList.addEventListener("click", (event) => {
+    console.log(event)
+    if(event.target.tagName === 'LI' ){
+        console.log("list item clicked")
+        const id = event.target.dataset.id
+        petFetch(id)
+    }
+})
 
 
 
@@ -97,6 +108,6 @@ friendList.addEventListener("click", (event) => {
 
 allPetFetch()
 userFetch(2)
-petFetch(7)
+petFetch(15)
 
 
