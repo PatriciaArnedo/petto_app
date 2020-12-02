@@ -22,7 +22,7 @@ const heartIcon = document.querySelector("#heart")
 const logIn = document.querySelector("#log-in")
 const petsContainerText = document.querySelector("#pets-container-text")
 const statsList = document.querySelector("#stats-list")
-const containerList = document.querySelector('#container-title')
+const containerList = document.querySelector("#container-title")
 let displayButton = document.querySelectorAll(".button_display")
 
 
@@ -64,7 +64,9 @@ const allPetFetch = () => {
         .then(r => r.json())
         .then(petArray => {
             console.log(petArray)
-            petArray.forEach(pet => { renderFriend(pet) })
+            petArray.forEach(pet => { 
+                containerList.textContent = ""
+                renderFriend(pet) })
         })
 }
 
@@ -93,7 +95,7 @@ const renderUser = ({ name }) => {
 }
 
 const renderUserPet = (pet) => {
-    container = ""
+    petsContainerText.textContent = "Your Pets"
     let petLi = document.createElement("li")
     petLi.textContent = pet.name
     petLi.dataset.id = pet.id
@@ -103,18 +105,44 @@ const renderUserPet = (pet) => {
 
 
 const renderPet = (pet) => {
+    const happyLI = document.createElement("li")
+    const hungerLI = document.createElement("li")
+    const energyLI = document.createElement("li")
+    const cleanLI = document.createElement("li")
+
     const petHappiness = document.createElement("progress")
     const petHunger = document.createElement("progress")
     const petCleanliness = document.createElement("progress")
     const petEnergy = document.createElement("progress")
+    
+    petHunger.value = 0
+    petCleanliness.value = 0
+    petEnergy.value = 0
+    petHappiness.value = 0
+    petHunger.max = 100
+    petCleanliness.max = 100
+    petEnergy.max = 100
+    petHappiness.max = 100
+
     petId = pet.id
     petHunger.value = pet.hunger
     petCleanliness.value = pet.cleanliness
     petEnergy.value = pet.energy
     petHappiness.value = pet.happiness
 
+    happyLI.textContent = "Happiness:"
+    hungerLI.textContent = "Hunger:"
+    energyLI.textContent = "Energy:"
+    cleanLI.textContent = "Cleanliness:"
+    
+    
+    happyLI.append(petHappiness)
+    hungerLI.append(petHunger)
+    energyLI.append(petEnergy)
+    cleanLI.append(petCleanliness)
+
     statsList.innerHTML = ""
-    statsList.append(petHappiness, petHunger, petCleanliness, petEnergy)
+    statsList.append(happyLI, hungerLI, energyLI, cleanLI)
 
     petImg.src = pet.happy_img
     petTitle.textContent = pet.name
@@ -122,7 +150,6 @@ const renderPet = (pet) => {
 }
 
 const renderFriend = (pet) => {
-    petsContainerText.textContent = "Your Pets"
     let friendLi = document.createElement("li")
     friendLi.textContent = pet.name
     friendLi.dataset.id = pet.id
@@ -179,13 +206,14 @@ logIn.addEventListener("submit", (e) => {
         
         currentUser = true
         renderUser(loginUser)
-
-        if(loginUser.pet){
-        loginUser.pets.forEach(pet =>{
-            renderPet(pet)
-        })
-    }
-    
+        
+        
+            loginUser.pets.forEach(pet =>{
+                renderUserPet(pet)
+            })
+        
+        renderPet(loginUser.pets[0])
+            
         allPetFetch()
     })
 })
