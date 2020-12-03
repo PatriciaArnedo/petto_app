@@ -65,10 +65,20 @@ const allPetFetch = () => {
     fetch('http://localhost:3000/api/pets/')
         .then(r => r.json())
         .then(petArray => {
-            console.log(petArray)
-            petArray.forEach(pet => { 
+            
+            const cleanArray = []
+            petArray.forEach(pet =>{   
+                if(pet.user_id != userId){
+                    cleanArray.push(pet)
+                }
+            })
+
+         const randomPet = shuffle(cleanArray)
+          randomPet.slice(6,randomPet.length).forEach(pet => { 
                 containerList.textContent = ""
-                renderFriend(pet) })
+                renderFriend(pet) 
+                })
+            
         })
 }
 
@@ -161,6 +171,15 @@ const renderFriend = (pet) => {
 }
 
 
+//Helper Functions
+
+function shuffle(a) {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+}
 
 
 //---------event handlers----------//
@@ -217,7 +236,7 @@ logIn.addEventListener("submit", (e) => {
     fetch(`http://localhost:3000/api/users/${userName}`)
     .then(r => r.json())
     .then(loginUser => {
-        
+        userId = loginUser.id
         currentUser = true
         renderUser(loginUser)
         
