@@ -59,7 +59,7 @@ petSignup.addEventListener("submit", (e)=>{
   
     petObj.name = petSignup.name.value
 
-
+  console.log(userId)
   fetch(`http://localhost:3000/api/pets`, {
         method: 'POST',
         headers: {
@@ -67,7 +67,12 @@ petSignup.addEventListener("submit", (e)=>{
         },
         body: JSON.stringify(petObj),
     })
-        .then(renderUser(userId))
+        .then(r => r.json())
+        .then(newPet => {
+          renderPet(newPet)
+          userFetch(newPet.user_id)
+          allPetFetch()
+        })
     
     modal.style.display = "none"    
     modal2.style.display = "none"
