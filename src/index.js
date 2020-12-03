@@ -221,7 +221,6 @@ logIn.addEventListener("submit", (e) => {
         currentUser = true
         renderUser(loginUser)
         
-        
             loginUser.pets.forEach(pet =>{
                 renderUserPet(pet)
             })
