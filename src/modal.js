@@ -6,6 +6,7 @@ const petSignup = document.querySelector("#select-pet")
 const petFormImage = document.querySelector(".pet_form_image")
 let userId 
 let petObj
+let userName
 
 petFormImage.addEventListener("click",(e)=>{
   if(e.target.matches("input")){
@@ -47,7 +48,7 @@ usernameSignup.addEventListener("submit", (e)=>{
     })
         .then(response => response.json())
         .then(data => {
-
+            userName = data.name
             userId = data.id
         })
 
@@ -70,7 +71,7 @@ petSignup.addEventListener("submit", (e)=>{
         .then(r => r.json())
         .then(newPet => {
           renderPet(newPet)
-          userFetch(newPet.user_id)
+          userFetch(userName)
           allPetFetch()
         })
     

@@ -32,24 +32,24 @@ const background = document.querySelector(".petbackground")
 
 //-------fetches-------//
 
-const userFetch = (id) => {
-    const btn = document.querySelector("#signup")
+// const userFetch = (name) => {
+//     const btn = document.querySelector("#signup")
 
-    fetch(`http://localhost:3000/api/users/${id}`)
-        .then(r => r.json())
-        .then(userObj => {
-            renderUser(userObj)
-            console.log(userObj)
-        })
-    currentUser = true
+//     fetch(`http://localhost:3000/api/users/${name}`)
+//         .then(r => r.json())
+//         .then(userObj => {
+//             renderUser(userObj)
+//             console.log(userObj)
+//         })
+//     currentUser = true
 
 
-    displayButton.forEach((button) => {
-        button.style.display = " "
-    })
-    btn.style.display = "none"
+//     displayButton.forEach((button) => {
+//         button.style.display = " "
+//     })
+//     btn.style.display = "none"
 
-}
+// }
 
 const petFetch = (id) => {
     fetch(`http://localhost:3000/api/pets/${id}`)
@@ -82,6 +82,36 @@ const allPetFetch = () => {
         })
 } 
 
+const userFetch = (name) => {    
+    fetch(`http://localhost:3000/api/users/${name}`)
+    .then(r => r.json())
+    .then(loginUser => {
+        console.log(loginUser)
+        userId = loginUser.id
+        currentUser = true
+        renderUser(loginUser)
+            userPets.innerHTML = ""
+            loginUser.pets.forEach(pet =>{
+                renderUserPet(pet)
+    // else {
+    //     fetch(`http://localhost:3000/api/users/${userName}`)
+    //         .then(r => r.json())
+    //         .then(loginUser => {
+
+    //             currentUser = true
+    //             renderUser(loginUser)
+
+    //             loginUser.pets.forEach(pet => {
+    //                 renderUserPet(pet)
+    //             })
+
+                renderPet(loginUser.pets[0])
+                allPetFetch()
+            })
+        } 
+    )
+
+}
 
 //--------render functions----------//
 
@@ -240,33 +270,8 @@ logIn.addEventListener("submit", (e) => {
         alert("Enter Username")
     }
     else { 
-        fetch(`http://localhost:3000/api/users/${userName}`)
-        .then(r => r.json())
-        .then(loginUser => {
-            userId = loginUser.id
-            currentUser = true
-            renderUser(loginUser)
-            
-                loginUser.pets.forEach(pet =>{
-                    renderUserPet(pet)
-        // else {
-        //     fetch(`http://localhost:3000/api/users/${userName}`)
-        //         .then(r => r.json())
-        //         .then(loginUser => {
-    
-        //             currentUser = true
-        //             renderUser(loginUser)
-    
-        //             loginUser.pets.forEach(pet => {
-        //                 renderUserPet(pet)
-        //             })
-    
-                    renderPet(loginUser.pets[0])
-                    allPetFetch()
-                })
-            } 
-        )
-    }
+        userFetch(userName)
+}
 })
     
 
