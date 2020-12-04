@@ -32,6 +32,7 @@ const background = document.querySelector(".petbackground")
 const notYourPets = document.querySelectorAll(".notyourpet")
 const bio = document.querySelector("#bio")
 const owner = document.querySelector("#user")
+const deleteUser = document.querySelector('#delete')
 
 //-------fetches-------//
 
@@ -230,6 +231,21 @@ function changeDate(str){
 
 logOutBtn.addEventListener("click", () => {
     location.reload()
+})
+
+deleteUser.addEventListener("click", (event) =>{
+    event.preventDefault()
+    console.log(username.textContent)
+    fetch(`http://localhost:3000/api/users/${username.textContent}`, {
+        method: 'DELETE'
+    })
+    
+    
+    let r = confirm("Are you Sure you want to Delete your account?")
+    if (r == true) {
+    location.reload()
+    } else {
+    }
 })
 
 friendList.addEventListener("click", (event) => {
