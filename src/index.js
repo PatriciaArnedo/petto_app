@@ -29,6 +29,7 @@ const htmlBody = document.querySelector("body")
 const logOutBtn = document.querySelector("#log-out")
 const statBtns = document.querySelector("#button-container")
 const background = document.querySelector(".petbackground")
+const notYourPets = document.querySelectorAll(".notyourpet")
 
 //-------fetches-------//
 
@@ -232,16 +233,28 @@ logOutBtn.addEventListener("click", () => {
 
 friendList.addEventListener("click", (event) => {
     if (event.target.tagName === 'LI') {
+        const notYourPets = document.querySelectorAll(".notyourpet")
+        background.src = "https://i.imgur.com/v54LX99.jpg"
         const id = event.target.dataset.id
         petFetch(id)
+
+        notYourPets.forEach((button) => {
+            button.style.display = "none"
+        })
     }
 })
 
 petList.addEventListener("click", (event) => {
     if (event.target.tagName === 'LI') {
+        background.src = "https://i.imgur.com/v54LX99.jpg"
         const id = event.target.dataset.id
         petFetch(id)
+
+        notYourPets.forEach((button) => {
+            button.style.display = ""
+        })
     }
+
 })
 
 heartIcon.addEventListener("click", () => {
@@ -287,6 +300,8 @@ statBtns.addEventListener("click", (e) => {
     let cleanliness = petCleanliness.value
 
     if (e.target.dataset.id === "Feed") {
+        background.src = "https://i.imgur.com/v54LX99.jpg"
+
         if (petHunger.value < 100 || petCleanliness.value > 0) {
             hunger = hunger + 10
             cleanliness = cleanliness - 10
@@ -296,6 +311,8 @@ statBtns.addEventListener("click", (e) => {
             cleanliness: cleanliness
         }
     } else if (e.target.dataset.id === "Play") {
+        background.src = "https://i.imgur.com/v54LX99.jpg"
+
         if (petEnergy.value > 0 || petCleanliness.value > 0) {
             energy = energy - 10
             cleanliness = cleanliness - 10
@@ -305,6 +322,8 @@ statBtns.addEventListener("click", (e) => {
             cleanliness: cleanliness
         }
     } else if (e.target.dataset.id === "Clean") {
+        background.src = "https://i.imgur.com/v54LX99.jpg"
+
         if (petCleanliness.value < 100 || petHappiness.value > 0) {
             cleanliness = cleanliness + 20
             happiness = happiness - 20
