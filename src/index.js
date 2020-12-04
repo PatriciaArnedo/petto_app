@@ -30,6 +30,8 @@ const logOutBtn = document.querySelector("#log-out")
 const statBtns = document.querySelector("#button-container")
 const background = document.querySelector(".petbackground")
 const notYourPets = document.querySelectorAll(".notyourpet")
+const bio = document.querySelector("#bio")
+const owner = document.querySelector("#user")
 
 //-------fetches-------//
 
@@ -152,6 +154,12 @@ const renderUserPet = (pet) => {
 
 const renderPet = (pet) => {
     petCurrent = pet
+    const created_at = pet.created_at.substring(0,10)
+    const updatedDate = changeDate(created_at)
+
+    const bday = document.querySelector("#bday")
+    const bio = document.querySelector("#bio")
+    const owner = document.querySelector("#user")
     const happyLI = document.createElement("li")
     const hungerLI = document.createElement("li")
     const energyLI = document.createElement("li")
@@ -200,7 +208,12 @@ const renderPet = (pet) => {
     } else if(pet.happiness < 50 ){
         petImg.src = pet.sad_img
     }
+    //debugger
     
+    //owner.textContext = `My Owner is: ${pet.user.name}`
+    bio.textContent = `Bio: ${pet.bio}`
+    bday.textContent = `I Was Born On: ${updatedDate}`
+    console.log(pet.bio)
     petTitle.textContent = pet.name
     actionsTitle.textContent = `What Will You Do With ${pet.name}?`
 }
@@ -223,6 +236,17 @@ function shuffle(a) {
     return a;
 }
 
+function changeDate(str){
+    let updatedDate = str.split("-")
+    const bornYear = parseInt(updatedDate[0])
+    const bornMonth = parseInt(updatedDate[1])-1
+    const bornDate = parseInt(updatedDate[2])
+
+  const options = {month: 'long', year:'numeric', day:'numeric'}
+
+  const born  = new Date(bornYear,bornMonth,bornDate)
+ return  born.toLocaleDateString('en-US',options)
+}
 
 //---------event handlers----------//
 
@@ -241,6 +265,7 @@ friendList.addEventListener("click", (event) => {
         notYourPets.forEach((button) => {
             button.style.display = "none"
         })
+        actionsTitle.style.display = "none"
     }
 })
 
@@ -253,6 +278,7 @@ petList.addEventListener("click", (event) => {
         notYourPets.forEach((button) => {
             button.style.display = ""
         })
+        actionsTitle.style.display = ""
     }
 
 })
