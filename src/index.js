@@ -3,7 +3,7 @@
 
 let petId = 0
 let currentUser = false
-let petCurrent
+let petCurrent = {}
 
 
 //------elements------//
@@ -35,29 +35,13 @@ const owner = document.querySelector("#user")
 
 //-------fetches-------//
 
-// const userFetch = (name) => {
-//     const btn = document.querySelector("#signup")
 
-//     fetch(`http://localhost:3000/api/users/${name}`)
-//         .then(r => r.json())
-//         .then(userObj => {
-//             renderUser(userObj)
-//             console.log(userObj)
-//         })
-//     currentUser = true
-
-
-//     displayButton.forEach((button) => {
-//         button.style.display = " "
-//     })
-//     btn.style.display = "none"
-
-// }
 
 const petFetch = (id) => {
     fetch(`http://localhost:3000/api/pets/${id}`)
         .then(r => r.json())
         .then(petObject => {
+            // console.log(petObject)
             renderPet(petObject)
         })
 }
@@ -68,7 +52,7 @@ const allPetFetch = () => {
         .then(petArray => {
             
             const cleanArray = []
-            petArray.forEach(pet =>{  
+            petArray.forEach(pet =>{ 
                 if(pet.user_id != userId){
                     cleanArray.push(pet)
                 }
@@ -89,25 +73,13 @@ const userFetch = (name) => {
     fetch(`http://localhost:3000/api/users/${name}`)
     .then(r => r.json())
     .then(loginUser => {
-        console.log(loginUser)
+        // console.log(loginUser)
         userId = loginUser.id
         currentUser = true
         renderUser(loginUser)
             userPets.innerHTML = ""
             loginUser.pets.forEach(pet =>{
                 renderUserPet(pet)
-    // else {
-    //     fetch(`http://localhost:3000/api/users/${userName}`)
-    //         .then(r => r.json())
-    //         .then(loginUser => {
-
-    //             currentUser = true
-    //             renderUser(loginUser)
-
-    //             loginUser.pets.forEach(pet => {
-    //                 renderUserPet(pet)
-    //             })
-
                 renderPet(loginUser.pets[0])
                 allPetFetch()
             })
@@ -154,17 +126,23 @@ const renderUserPet = (pet) => {
 
 const renderPet = (pet) => {
     petCurrent = pet
+    const owner = document.querySelector("#user")
+    console.log(pet)
+    if (pet.user) {
+        owner.textContent = `My Owner is: ${pet.user.name}`   
+    } else {
+        owner.textContent = `My Owner is: ${username.textContent}` 
+    }
     const created_at = pet.created_at.substring(0,10)
     const updatedDate = changeDate(created_at)
-
+    
     const bday = document.querySelector("#bday")
     const bio = document.querySelector("#bio")
-    const owner = document.querySelector("#user")
     const happyLI = document.createElement("li")
     const hungerLI = document.createElement("li")
     const energyLI = document.createElement("li")
     const cleanLI = document.createElement("li")
-
+    
     const petHappiness = document.createElement("progress")
     petHappiness.id = "happy-progress"
     const petHunger = document.createElement("progress")
@@ -173,7 +151,7 @@ const renderPet = (pet) => {
     petCleanliness.id = "clean-progress"
     const petEnergy = document.createElement("progress")
     petEnergy.id = "energy-progress"
-
+    
     petHunger.value = 0
     petCleanliness.value = 0
     petEnergy.value = 0
@@ -182,40 +160,38 @@ const renderPet = (pet) => {
     petCleanliness.max = 100
     petEnergy.max = 100
     petHappiness.max = 100
-
+    
     petId = pet.id
     petHunger.value = pet.hunger
     petCleanliness.value = pet.cleanliness
     petEnergy.value = pet.energy
     petHappiness.value = pet.happiness
-
+    
     happyLI.textContent = "Happiness:"
     hungerLI.textContent = "Hunger:"
     energyLI.textContent = "Energy:"
     cleanLI.textContent = "Cleanliness:"
-
-
+    
+    
     happyLI.append(petHappiness)
     hungerLI.append(petHunger)
     energyLI.append(petEnergy)
     cleanLI.append(petCleanliness)
-
+    
     statsList.innerHTML = ""
     statsList.append(happyLI, hungerLI, energyLI, cleanLI)
-
+    
     if(pet.happiness >= 50 ){
         petImg.src = pet.happy_img
     } else if(pet.happiness < 50 ){
         petImg.src = pet.sad_img
     }
-    //debugger
     
-    //owner.textContext = `My Owner is: ${pet.user.name}`
     bio.textContent = `Bio: ${pet.bio}`
     bday.textContent = `I Was Born On: ${updatedDate}`
-    console.log(pet.bio)
     petTitle.textContent = pet.name
     actionsTitle.textContent = `What Will You Do With ${pet.name}?`
+    petCurrent = pet
 }
 
 const renderFriend = (pet) => {
@@ -223,6 +199,7 @@ const renderFriend = (pet) => {
     friendLi.textContent = pet.name
     friendLi.dataset.id = pet.id
     friendList.append(friendLi)
+    // debugger
 }
 
 
@@ -261,7 +238,7 @@ friendList.addEventListener("click", (event) => {
         background.src = "https://i.imgur.com/v54LX99.jpg"
         const id = event.target.dataset.id
         petFetch(id)
-
+        
         notYourPets.forEach((button) => {
             button.style.display = "none"
         })
@@ -370,7 +347,7 @@ statBtns.addEventListener("click", (e) => {
             hunger: hunger
         }
     }
-    console.log(petId)
+    // console.log(petId)
     fetch(`http://localhost:3000/api/pets/${petId}`, {
         method: 'PATCH',
         headers: {
