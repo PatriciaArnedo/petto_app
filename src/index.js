@@ -261,14 +261,13 @@ logOutBtn.addEventListener("click", () => {
 deleteUser.addEventListener("click", (event) =>{
     event.preventDefault()
     console.log(username.textContent)
-    fetch(`http://localhost:3000/api/users/${username.textContent}`, {
-        method: 'DELETE'
-    })
-    
     
     let r = confirm("Are you Sure you want to Delete your account?")
     if (r == true) {
     location.reload()
+    fetch(`http://localhost:3000/api/users/${username.textContent}`, {
+        method: 'DELETE'
+    })
     } else {
     }
 })
@@ -276,7 +275,8 @@ deleteUser.addEventListener("click", (event) =>{
 friendList.addEventListener("click", (event) => {
     if (event.target.tagName === 'LI') {
         const notYourPets = document.querySelectorAll(".notyourpet")
-        background.src = "https://i.imgur.com/v54LX99.jpg"
+        background.src = "https://i.imgur.com/2IJwIpi.png"
+        petImg.style.display = ""
         const id = event.target.dataset.id
         petFetch(id)
         
@@ -289,7 +289,8 @@ friendList.addEventListener("click", (event) => {
 
 petList.addEventListener("click", (event) => {
     if (event.target.tagName === 'LI') {
-        background.src = "https://i.imgur.com/v54LX99.jpg"
+        background.src = "https://i.imgur.com/2IJwIpi.png"
+        petImg.style.display = ""
         const id = event.target.dataset.id
         petFetch(id)
 

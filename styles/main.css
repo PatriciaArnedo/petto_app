@@ -229,8 +229,28 @@ font-family: 'Baloo Paaji 2', cursive;
     margin-top: 20px;
     text-align: center;
     font-family: 'Baloo Paaji 2', cursive;
+    font-weight: bold;
+    box-shadow: 0 0 0 1px #dca5de inset,0 0 0 2px rgba(255, 255, 255, 0.509) inset,0 2px 0 0 #dca5de,0 2px 0 .5px rgba(103, 101, 101, 0.4),0 1px 1px 1px rgba(131, 131, 131, 0.5);
+    color: rgb(78, 76, 76) !important;
+    border-radius: 5%;
+    letter-spacing: 1px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-shadow: 0 1px 1px rgba(236, 236, 236, 0.5);
+    outline: none;
 }
 
+#delete:hover {
+    background-color: #FED9FF;
+    position: relative;
+    top: -1px;
+    box-shadow: 0 0 0 1px #dca5de inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 3px 0 0 #dca5de,0 4px 0 1px rgba(80, 79, 79, 0.4),0 2px 5px 1px rgba(0, 0, 0, 0.5);
+}
+#delete:active {
+    background-color: #FED9FF;
+    top: 4px;
+    box-shadow: 0 0 0 1px #dca5de inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 0 0 0 #dca5de,0 0 0 1px rgba(0, 0, 0, 0.4),0 0px 8px 1px rgba(0, 0, 0, 0.5);
+}
 
 #action_button{
     border-radius: 50%;
@@ -239,7 +259,29 @@ font-family: 'Baloo Paaji 2', cursive;
     background-color: #89C6FF;
     border: none;
     font-family: 'Baloo Paaji 2', cursive;
-    
+    font-weight: bold;
+    box-shadow: 0 0 0 1px #355ea4 inset,0 0 0 2px rgba(255, 255, 255, 0.324) inset,0 4px 0 0 #4c7acb,0 4px 0 1px rgba(103, 101, 101, 0.4),0 4px 4px 1px rgba(92, 92, 92, 0.5);
+    color: white !important;
+    letter-spacing: 1px;
+    line-height: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5);
+    outline: none;
+}
+
+
+#action_button:hover {
+    background-color: #89C6FF;
+    position: relative;
+    top: -1px;
+    box-shadow: 0 0 0 1px #355ea4 inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 5px 0 0 #4c7acb,0 5px 0 1px rgba(0, 0, 0, 0.4),0 5px 8px 1px rgba(0, 0, 0, 0.5);
+}
+
+#action_button:active {
+background-color: #89C6FF;
+top: 4px;
+box-shadow: 0 0 0 1px #355ea4 inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 0 0 0 #4c7acb,0 0 0 1px rgba(0, 0, 0, 0.4),0 0px 8px 1px rgba(0, 0, 0, 0.5);
 }
 
 #heart{
@@ -248,6 +290,7 @@ font-family: 'Baloo Paaji 2', cursive;
     z-index: 1;
     position: absolute;
     margin-right: 1em;
+    
 }
 
 
