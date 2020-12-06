@@ -58,7 +58,7 @@ petSignup.addEventListener("submit", (e)=>{
   e.preventDefault()
   
     petObj.name = petSignup.name.value
-
+    
   console.log(userId)
   fetch(`http://localhost:3000/api/pets`, {
         method: 'POST',
@@ -74,11 +74,13 @@ petSignup.addEventListener("submit", (e)=>{
           allPetFetch()
         })
         initialize()
+        background.src = "https://i.imgur.com/2IJwIpi.png"
     modal.style.display = "none"    
     modal2.style.display = "none"
 })
 
 // Hide the form
+
 modal.addEventListener("click", e => {
   if (e.target.dataset.action === "close") {
     modal.style.display = "none"

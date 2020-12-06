@@ -331,6 +331,7 @@ logIn.addEventListener("submit", (e) => {
     else { 
         userFetch(userName)
         initialize()
+        background.src = "https://i.imgur.com/2IJwIpi.png"
     }   
 })
     
