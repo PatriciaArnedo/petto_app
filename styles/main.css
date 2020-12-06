@@ -256,29 +256,31 @@ img.petimg{
     outline: none;
 }
 
-#signup{
-background-color: #FED9FF;
-border: none;
-padding: 5px 5px;
-text-align: center;
-font-family: 'Baloo Paaji 2', cursive;
-font-weight: bold;
-font-size: 20px;
-box-shadow: 0 0 0 1px #dca5de inset,0 0 0 2px rgba(255, 255, 255, 0.509) inset,0 2px 0 0 #dca5de,0 2px 0 .5px rgba(103, 101, 101, 0.4),0 1px 1px 1px rgba(131, 131, 131, 0.5);
-color: rgb(78, 76, 76) !important;
-border-radius: 5%;
-letter-spacing: 1px;
-text-shadow: 0 1px 1px rgba(236, 236, 236, 0.5);
-outline: none;
-height: 40ox;
-width: 150px;
+#signup{  
+    background-color: #FED9FF;
+    border: none;
+    padding: 5px 5px;
+    text-align: center;
+    font-family: 'Baloo Paaji 2', cursive;
+    font-weight: bold;
+    font-size: 20px;
+    box-shadow: 0 0 0 1px #dca5de inset,0 0 0 2px rgba(255, 255, 255, 0.509) inset,0 2px 0 0 #dca5de,0 2px 0 .5px rgba(103, 101, 101, 0.4),0 1px 1px 1px rgba(131, 131, 131, 0.5);
+    color: rgb(78, 76, 76) !important;
+    border-radius: 5%;
+    letter-spacing: 1px;
+    text-shadow: 0 1px 1px rgba(236, 236, 236, 0.5);
+    outline: none;
+    height: 40ox;
+    width: 150px;
 }
+
 #signup:hover {
     background-color: #FED9FF;
     position: relative;
     top: -1px;
     box-shadow: 0 0 0 1px #dca5de inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 3px 0 0 #dca5de,0 4px 0 1px rgba(80, 79, 79, 0.4),0 2px 5px 1px rgba(0, 0, 0, 0.5);
 }
+
 #signup:active {
     background-color: #FED9FF;
     top: 4px;
@@ -342,9 +344,9 @@ width: 150px;
 }
 
 #action_button:active {
-background-color: #89C6FF;
-top: 4px;
-box-shadow: 0 0 0 1px #355ea4 inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 0 0 0 #4c7acb,0 0 0 1px rgba(0, 0, 0, 0.4),0 0px 8px 1px rgba(0, 0, 0, 0.5);
+    background-color: #89C6FF;
+    top: 4px;
+    box-shadow: 0 0 0 1px #355ea4 inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 0 0 0 #4c7acb,0 0 0 1px rgba(0, 0, 0, 0.4),0 0px 8px 1px rgba(0, 0, 0, 0.5);
 }
 
 #heart{
@@ -367,59 +369,117 @@ box-shadow: 0 0 0 1px #355ea4 inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 
 
  /** FORM CSS */
  #modal {
-        position: fixed;
-       
-        z-index: 1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.75);
-    }
+    position: fixed;   
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+}
     
-    #modal2{
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(0, 0, 0, 0.40);
-    }
+ #modal2{
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.40);
+}
 
 #select-pet{
     background-color: #ffccff;
     box-shadow: 0 4px 8px 0 rgb(156, 148, 148);
     margin: 20vh auto 0;
-    width: 500px;
-    height: 200px;
+    width: 550px;
+    /* height: 50%; */
     text-align: center;
+    padding:50px 0;
+}
+
+#select-pet h1 {
+    margin-bottom: 30px;
+    font-size: 32pt;
 }
 
 #sign-up{
     background-color: #ffccff;
     box-shadow: 0 4px 8px 0 rgb(156, 148, 148);
-    height: 100px;
+    /* height: 200px; */
     width: 500px;
     margin: 20vh auto 0;
     text-align: center;
+    padding: 25px 0;
+}
+
+#sign-up  h1 {
+    margin-bottom: 30px;
+    font-size: 32pt;
 }
 
 #modal form input{
     display: block;
-    width: 100%;
+    /* width: 100%; */
     max-width: 300px;
     margin: 0.25em auto;
     padding: 0.25em 1em;
     text-align: center;
 }
 
+#create-user{
+    box-shadow: 0 0 0 1px #dca5de inset,0 0 0 2px rgba(255, 255, 255, 0.509) inset,0 2px 0 0 #dca5de,0 2px 0 .5px rgba(103, 101, 101, 0.4),0 1px 1px 1px rgba(131, 131, 131, 0.5);
+    font-family: 'Baloo Paaji 2', cursive;
+    font-weight: bold;
+    border: none;
+    border-radius: 5%;
+    letter-spacing: 1px;
+    width: 100px;
+    text-shadow: 0 1px 1px rgba(236, 236, 236, 0.5);
+}
+
+#create-user:hover {
+    background-color: #E3FDFF;
+    position: relative;
+    top: -1px;
+    box-shadow: 0 0 0 1px #E3FDFF inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 3px 0 0 #E3FDFF,0 4px 0 1px rgba(80, 79, 79, 0.4),0 2px 5px 1px rgba(0, 0, 0, 0.5);
+}
+
+#create-user:active{
+    background-color: #E3FDFF;
+    top: 4px;
+    box-shadow: 0 0 0 1px #E3FDFF inset,0 0 0 2px rgba(255, 255, 255, 0.372) inset,0 0 0 0 #E3FDFF,0 0 0 1px rgba(88, 88, 88, 0.4),0 0px 8px 1px rgba(94, 94, 94, 0.5);
+}
 
 
 
+#select-pet-container{
+    margin-top: 20px;
+}
 
+#start-button{
+    box-shadow: 0 0 0 1px #dca5de inset,0 0 0 2px rgba(255, 255, 255, 0.509) inset,0 2px 0 0 #dca5de,0 2px 0 .5px rgba(103, 101, 101, 0.4),0 1px 1px 1px rgba(131, 131, 131, 0.5);
+    font-family: 'Baloo Paaji 2', cursive;
+    font-weight: bold;
+    border: none;
+    border-radius: 5%;
+    letter-spacing: 1px;
+    width: 100px;
+    text-shadow: 0 1px 1px rgba(236, 236, 236, 0.5);
+}
 
+#start-button:hover{
+    background-color: #E3FDFF;
+    position: relative;
+    top: -1px;
+    box-shadow: 0 0 0 1px #E3FDFF inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 3px 0 0 #E3FDFF,0 4px 0 1px rgba(80, 79, 79, 0.4),0 2px 5px 1px rgba(0, 0, 0, 0.5);
+}
 
+#start-button:active{
+    background-color: #E3FDFF;
+    top: 4px;
+    box-shadow: 0 0 0 1px #E3FDFF inset,0 0 0 2px rgba(255, 255, 255, 0.372) inset,0 0 0 0 #E3FDFF,0 0 0 1px rgba(88, 88, 88, 0.4),0 0px 8px 1px rgba(94, 94, 94, 0.5);
+}
 
 
 
