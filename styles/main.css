@@ -51,6 +51,10 @@ stat
 
 #actions-title{
     padding: 25px 0;
+    font-size: 50px;
+    color: rgb(238, 168, 255);
+    text-shadow: 0 5px 0 rgb(109, 108, 108);  
+
 }
 
 /* HEADER */
