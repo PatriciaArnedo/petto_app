@@ -435,7 +435,8 @@ input[type=checkbox]{
 }
 
 input#pet1[type=checkbox] + label{
-    background-image: url("https://i.imgur.com/gHMBdEv.gif");
+    /*Duncan*/
+    background-image: url("https://i.imgur.com/Hd0fjmp.gif");
     border-color: rgb(27, 3, 3);
     height: 100px;
     width: 79px;
@@ -454,7 +455,8 @@ input#pet1[type=checkbox]:checked + label{
 }
 
 input#pet2[type=checkbox] + label{
-    background-image: url("https://i.imgur.com/gHMBdEv.gif");
+    /* anise */
+    background-image: url("https://i.imgur.com/VJEghyD.gif");
     border-color: white;
     height: 100px;
     width: 79px;
@@ -474,7 +476,8 @@ input#pet2[type=checkbox]:checked + label{
 }
 
 input#pet3[type=checkbox] + label{
-    background-image: url("https://i.imgur.com/gHMBdEv.gif");
+    /* olive */
+    background-image: url("https://i.imgur.com/tPBTJx0.gif");
     border-color: white;
     height: 100px;
     width: 79px;
@@ -494,7 +497,8 @@ input#pet3[type=checkbox]:checked + label{
 }
 
 input#pet4[type=checkbox] + label{
-    background-image: url("https://i.imgur.com/gHMBdEv.gif");
+    /* burt */
+    background-image: url("https://i.imgur.com/3cEVwm8.gif");
     border-color: white;
     height: 100px;
     width: 79px;
@@ -514,7 +518,8 @@ input#pet4[type=checkbox]:checked + label{
 }
 
 input#pet5[type=checkbox] + label{
-    background-image: url("https://i.imgur.com/gHMBdEv.gif");
+    /* foxy */
+    background-image: url("https://i.imgur.com/xsZFh37.gif");
     border-color: white;
     height: 100px;
     width: 79px;
@@ -532,29 +537,6 @@ input#pet5[type=checkbox]:checked + label{
     border-width: 5px;
 
 }
-
-input#pet6[type=checkbox] + label{
-    background-image: url("https://i.imgur.com/gHMBdEv.gif");
-    border-color: white;
-    height: 100px;
-    width: 79px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-}
-
-input#pet6[type=checkbox]:checked + label{
-    border-color: rgb(247, 151, 167);
-    border-style: solid;
-    width: 79px;
-    height: 100px;
-    display: inline-block;
-    padding: 0 0 0 0px;
-    border-width: 5px;
-
-}
-
-
-
 
 
 
