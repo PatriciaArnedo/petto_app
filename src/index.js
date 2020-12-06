@@ -322,15 +322,15 @@ heartIcon.addEventListener("click", () => {
 
 logIn.addEventListener("submit", (e) => {
     e.preventDefault()
-    initialize()
     const userName = e.target.name.value
-
+    
     if (!userName) {
         alert("Enter Username")
     }
     else { 
         userFetch(userName)
-}
+        initialize()
+    }   
 })
     
 
