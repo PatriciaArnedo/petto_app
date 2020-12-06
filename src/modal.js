@@ -27,7 +27,6 @@ petFormImage.addEventListener("click",(e)=>{
 
 document.querySelector("#signup").addEventListener("click", () => {
   modal.style.display = "block"
-
 })
 
 usernameSignup.addEventListener("submit", (e)=>{
@@ -74,7 +73,7 @@ petSignup.addEventListener("submit", (e)=>{
           userFetch(userName)
           allPetFetch()
         })
-    
+        initialize()
     modal.style.display = "none"    
     modal2.style.display = "none"
 })
