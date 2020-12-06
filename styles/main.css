@@ -499,7 +499,7 @@ input#pet1[type=checkbox] + label{
     background-image: url("https://i.imgur.com/Hd0fjmp.gif");
     border-color: rgb(27, 3, 3);
     height: 100px;
-    width: 79px;
+    width: 87px;
     display: inline-block;
     padding: 0 0 0 0px;
 }
@@ -508,7 +508,7 @@ input#pet1[type=checkbox]:checked + label{
     border-color: rgb(247, 151, 167);
     border-style: solid;
     border-width: 5px;
-    width: 79px;
+    width: 87px;
     height: 100px;
     display: inline-block;
     padding: 0 0 0 0px;
@@ -519,7 +519,7 @@ input#pet2[type=checkbox] + label{
     background-image: url("https://i.imgur.com/VJEghyD.gif");
     border-color: white;
     height: 100px;
-    width: 79px;
+    width: 98px;
     display: inline-block;
     padding: 0 0 0 0px;
 }
@@ -529,7 +529,7 @@ input#pet2[type=checkbox]:checked + label{
     border-style: solid;
     border-width: 5px;
 
-    width: 79px;
+    width: 98px;
     height: 100px;
     display: inline-block;
     padding: 0 0 0 0px;
@@ -540,7 +540,7 @@ input#pet3[type=checkbox] + label{
     background-image: url("https://i.imgur.com/tPBTJx0.gif");
     border-color: white;
     height: 100px;
-    width: 79px;
+    width: 87px;
     display: inline-block;
     padding: 0 0 0 0px;
 }
@@ -548,7 +548,7 @@ input#pet3[type=checkbox] + label{
 input#pet3[type=checkbox]:checked + label{
     border-color: rgb(247, 151, 167);
     border-style: solid;
-    width: 79px;
+    width: 87px;
     height: 100px;
     display: inline-block;
     padding: 0 0 0 0px;
@@ -561,7 +561,7 @@ input#pet4[type=checkbox] + label{
     background-image: url("https://i.imgur.com/3cEVwm8.gif");
     border-color: white;
     height: 100px;
-    width: 79px;
+    width: 98px;
     display: inline-block;
     padding: 0 0 0 0px;
 }
@@ -569,7 +569,7 @@ input#pet4[type=checkbox] + label{
 input#pet4[type=checkbox]:checked + label{
     border-color: rgb(247, 151, 167);
     border-style: solid;
-    width: 79px;
+    width: 98px;
     height: 100px;
     display: inline-block;
     padding: 0 0 0 0px;
