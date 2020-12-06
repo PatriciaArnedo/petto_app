@@ -10,14 +10,28 @@ body {
 
 .friends-heading{
     background-color: #FED9FF;
+    background-image: url("https://i.imgur.com/fvX2d0k.png");
     padding: 15px 0;
-    font-weight: 600;
+    font-weight: 800;
+    font-size: 24px;
+    color: #68c6eb;
+    text-shadow: 0 2px 0 rgb(109, 108, 108);  
 }
 #friend-container > li{
     padding: 15px 0;
-    font-weight: 400;
+    font-weight: 500;
     border-bottom: slategray solid;
     border-width: 1px;
+}
+
+#friend-container > li:hover{
+    cursor: pointer;
+}
+
+#container-title{
+    margin-top: 15px;
+    font-weight: 400;
+    
 }
 
 #username{
@@ -29,18 +43,29 @@ body {
 
 #stats-list > li{
     padding: 20px 0;
-    font-weight: 600;
+    font-weight: 400;
     /* border-bottom: solid; */
 }
 
 #pet-title{
+    background-image: url("https://i.imgur.com/fvX2d0k.png");
     background-color: #FED9FF;
     padding: 15px 0;
+    font-size: 24px;
+    padding: 25px 0; 
+    color: #68c6eb;
+    text-shadow: 0 2px 0 rgb(109, 108, 108);  
+
 }
 
 #pets-container-text{
+    background-image: url("https://i.imgur.com/fvX2d0k.png");
     background-color: #FED9FF;
     padding: 15px 0;
+    font-size: 24px;
+    color: #68c6eb;
+    text-shadow: 0 2px 0 rgb(109, 108, 108);  
+
 }
 
 #pets-container > li{
@@ -48,9 +73,13 @@ body {
     font-weight: 600;
 }
 
+#pets-container >li:hover{
+    cursor: pointer;
+}
+
 #actions-title{
     padding: 25px 0;
-    font-size: 50px;
+    font-size: 55pt;
     color: rgb(238, 168, 255);
     text-shadow: 0 5px 0 rgb(109, 108, 108);  
 
@@ -60,8 +89,11 @@ body {
 #app-title{
     font-size: 36pt;
     padding: 15px 0;
+    font-weight: 800;
     margin-left: 15px;
     position: absolute;
+    color: #68c6eb;
+    text-shadow: 0 2px 0 rgb(109, 108, 108);  
 }
 #user-div{
     margin-top: 20px; 
@@ -87,6 +119,7 @@ body {
 #login-button:hover {
     background-color: #FED9FF;
     position: relative;
+    cursor: pointer;
     top: -1px;
     box-shadow: 0 0 0 1px #dca5de inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 3px 0 0 #dca5de,0 4px 0 1px rgba(80, 79, 79, 0.4),0 2px 5px 1px rgba(0, 0, 0, 0.5);
 }
@@ -114,6 +147,7 @@ body {
 #log-out:hover {
     background-color: #FED9FF;
     position: relative;
+    cursor: pointer;
     top: -1px;
     box-shadow: 0 0 0 1px #dca5de inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 3px 0 0 #dca5de,0 4px 0 1px rgba(80, 79, 79, 0.4),0 2px 5px 1px rgba(0, 0, 0, 0.5);
 }
@@ -168,9 +202,7 @@ body {
     
 }
 
-#actions-title{
-    font-size: 40px;
-}
+
 
 
 
@@ -247,6 +279,7 @@ img.petimg{
 }
 
 .div5 { grid-area: 1 / 1 / 2 / 11; 
+    background-image: url("https://i.imgur.com/fvX2d0k.png");
         background-color: #FED9FF;
         margin-left: 10px;
         margin-right: 10px;
@@ -303,6 +336,7 @@ img.petimg{
 
 #signup:hover {
     background-color: #FED9FF;
+    cursor: pointer;
     position: relative;
     top: -1px;
     box-shadow: 0 0 0 1px #dca5de inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 3px 0 0 #dca5de,0 4px 0 1px rgba(80, 79, 79, 0.4),0 2px 5px 1px rgba(0, 0, 0, 0.5);
@@ -334,6 +368,7 @@ img.petimg{
 
 #delete:hover {
     background-color: #f1a5b1;
+    cursor:pointer;
     position: relative;
     top: -1px;
     box-shadow: 0 0 0 1px #eca4b6 inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 3px 0 0 #eb8198,0 4px 0 1px rgba(80, 79, 79, 0.4),0 2px 5px 1px rgba(0, 0, 0, 0.5);
@@ -365,6 +400,7 @@ img.petimg{
 
 #action_button:hover {
     background-color: #89C6FF;
+    cursor: pointer;
     position: relative;
     top: -1px;
     box-shadow: 0 0 0 1px #355ea4 inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 5px 0 0 #4c7acb,0 5px 0 1px rgba(0, 0, 0, 0.4),0 5px 8px 1px rgba(0, 0, 0, 0.5);
@@ -461,6 +497,7 @@ img.petimg{
 #create-user:hover {
     background-color: #E3FDFF;
     position: relative;
+    cursor: pointer;
     top: -1px;
     box-shadow: 0 0 0 1px #E3FDFF inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 3px 0 0 #E3FDFF,0 4px 0 1px rgba(80, 79, 79, 0.4),0 2px 5px 1px rgba(0, 0, 0, 0.5);
 }
@@ -497,6 +534,7 @@ img.petimg{
 #start-button:hover{
     background-color: #E3FDFF;
     position: relative;
+    cursor: pointer;
     top: -1px;
     box-shadow: 0 0 0 1px #E3FDFF inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 3px 0 0 #E3FDFF,0 4px 0 1px rgba(80, 79, 79, 0.4),0 2px 5px 1px rgba(0, 0, 0, 0.5);
 }
