@@ -1,3 +1,27 @@
+//------Sound ------//
+function sound(src) {
+    this.sound = document.createElement("audio");
+    this.sound.src = src;
+    this.sound.setAttribute("preload", "auto");
+    this.sound.setAttribute("controls", "none");
+    this.sound.style.display = "none";
+    document.body.appendChild(this.sound);
+    this.play = function(){
+        this.sound.play();
+    }
+    this.stop = function(){
+        this.sound.pause();
+    }
+}
+ 
+
+function initialize() {
+    let catJam = new sound("./src/assets/Neko atsume Original BGM.mp3")
+    catJam.play()
+}
+
+
+
 
 //------State-----//
 
@@ -161,7 +185,8 @@ const renderPet = (pet) => {
     petCleanliness.max = 100
     petEnergy.max = 100
     petHappiness.max = 100
-    
+
+        
     petId = pet.id
     petHunger.value = pet.hunger
     petCleanliness.value = pet.cleanliness
@@ -296,6 +321,7 @@ heartIcon.addEventListener("click", () => {
 
 logIn.addEventListener("submit", (e) => {
     e.preventDefault()
+    initialize()
     const userName = e.target.name.value
 
     if (!userName) {
@@ -312,6 +338,7 @@ statBtns.addEventListener("click", (e) => {
     const petCleanliness = document.querySelector("#clean-progress")
     const petEnergy = document.querySelector("#energy-progress")
     const petHappiness = document.querySelector("#happy-progress")
+    const petImg = document.querySelector(".petimg")
 
     let hunger = petHunger.value
     let energy = petEnergy.value
@@ -319,8 +346,8 @@ statBtns.addEventListener("click", (e) => {
     let cleanliness = petCleanliness.value
 
     if (e.target.dataset.id === "Feed") {
-        background.src = "https://i.imgur.com/v54LX99.jpg"
-
+        background.src = "https://i.imgur.com/2IJwIpi.png"
+        petImg.style.display = ""
         if (petHunger.value < 100 || petCleanliness.value > 0) {
             hunger = hunger + 10
             cleanliness = cleanliness - 10
@@ -330,8 +357,8 @@ statBtns.addEventListener("click", (e) => {
             cleanliness: cleanliness
         }
     } else if (e.target.dataset.id === "Play") {
-        background.src = "https://i.imgur.com/v54LX99.jpg"
-
+        background.src = "https://i.imgur.com/2IJwIpi.png"
+        petImg.style.display = ""
         if (petEnergy.value > 0 || petCleanliness.value > 0) {
             energy = energy - 10
             cleanliness = cleanliness - 10
@@ -341,8 +368,8 @@ statBtns.addEventListener("click", (e) => {
             cleanliness: cleanliness
         }
     } else if (e.target.dataset.id === "Clean") {
-        background.src = "https://i.imgur.com/v54LX99.jpg"
-
+        background.src = "https://i.imgur.com/2IJwIpi.png"
+        petImg.style.display = ""
         if (petCleanliness.value < 100 || petHappiness.value > 0) {
             cleanliness = cleanliness + 20
             happiness = happiness - 20
@@ -352,7 +379,10 @@ statBtns.addEventListener("click", (e) => {
             happiness: happiness
         }
     } else if (e.target.dataset.id === "Rest") {
-        background.src = "https://i.imgur.com/cKyBlpR.png"
+        background.src = "https://i.imgur.com/Wz3XpV5.png"
+        
+        petImg.style.display = "none"
+        
 
         if (petEnergy.value < 100 || petHunger.value > 0) {
             energy = energy + 20

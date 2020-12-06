@@ -8,18 +8,21 @@
     <link rel="stylesheet" href="./styles/main.css">
     <script src="./src/modal.js" defer></script>
     <script src="./src/index.js" defer> </script>
+    
+   
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Paaji+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <title>Petto</title>
 </head>
-<body>
+<body >
     <div class="div5"> 
     <header>
-        <H1>Petto</H1>
+        <H1 id="app-title">Petto</H1>
         <div id="user-div">
             <h2 id="username"></h2>
-            <button class="button_display" id="log-out">Log Out</button>
+            <button class="button_display design_button" id="log-out">Log Out</button>
             <form id="log-in">
-                <input type="text" name="name" placeholder="Name">
-                <input type="submit" value="Log In">
+                <input type="text" name="name" placeholder="Name" id="login-field">
+                <input type="submit" value="Log In" id="login-button" class="design_button">
             </form>
         </div>
     </header>
@@ -34,7 +37,7 @@
 
     </div>
     <div>
-        <button class="button_display" id="delete">Delete User</button>
+        <button class="button_display design_button" id="delete">Delete User</button>
     </div>
     </div>
 
@@ -43,9 +46,9 @@
         <div id="pet">
             <div id="image-container">
             <!--<img  src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5d86f2d4-54b9-4f09-9c37-a3b4427ce5f8/d9tshtb-29210bf8-4f1d-47bb-9f49-3e93c2139cea.png/v1/fill/w_1024,h_577,q_80,strp/pine_forest_by_boneswolbach_d9tshtb-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD01NzciLCJwYXRoIjoiXC9mXC81ZDg2ZjJkNC01NGI5LTRmMDktOWMzNy1hM2I0NDI3Y2U1ZjhcL2Q5dHNodGItMjkyMTBiZjgtNGYxZC00N2JiLTlmNDktM2U5M2MyMTM5Y2VhLnBuZyIsIndpZHRoIjoiPD0xMDI0In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.qPWvjLOW6_BHiZJ-wtMEQLgvhdN9OLKJZgrY8yw8iv0" class="petbackground">-->
-            <img src="https://i.imgur.com/v54LX99.jpg" class="petbackground">
-            <img  src="https://i.imgur.com/Ybb2Krd.gif" class="petimg" >
             <img src="https://img.icons8.com/cotton/2x/like.png" alt="" id="heart" class="button_display notyourpet" >  
+            <img  src="https://i.imgur.com/lckdUqX.gif" class="petimg" >
+            <img src="https://i.imgur.com/2IJwIpi.png" class="petbackground">
             </div>
             <div id="pet-actions">
                 <div id="actions-heading">
@@ -53,11 +56,11 @@
                 </div>
                 <div id="button-container">
                     <!--add buttons here-->
-                    <button data-id="Feed" class="button_display notyourpet"  id="action button">Feed</button>
-                    <button data-id="Play" class="button_display notyourpet"  id="action button">Play</button>
-                    <button data-id="Clean" class="button_display notyourpet"  id="action button">Clean</button>
-                    <button data-id="Rest" class="button_display notyourpet"  id="action button">Rest</button>
-                    <button id="signup">Sign Up!</button>
+                    <button data-id="Feed" class="button_display notyourpet"  id="action_button">Feed</button>
+                    <button data-id="Play" class="button_display notyourpet"  id="action_button">Play</button>
+                    <button data-id="Clean" class="button_display notyourpet"  id="action_button">Clean</button>
+                    <button data-id="Rest" class="button_display notyourpet"  id="action_button">Rest</button>
+                    <button id="signup" >Sign Up!</button>
                 </div>
             </div>
             <div id="pet-bio">
@@ -104,7 +107,7 @@
         <form id="sign-up">
             <h1>Sign Up!</h1>
             <input type="text" name="name" placeholder="Name">
-            <input type="submit" value="Create User">
+            <input type="submit" value="Create User" class="design_button">
         </form>
     </div>
 
@@ -120,7 +123,7 @@
             <input type="checkbox" name='pet6' id="pet6" data-happyimg="https://i.imgur.com/tItxRTi.gif" data-sadimg="https://i.imgur.com/Wo5syV8.gif" data-bio="I was born under brooklyn brownstone with the smell of sweet bodega chicken sandwiches in the air." /><label for="pet6"></label>  
             </div>
             <input type="text" name="name" placeholder="Name">
-            <input type="submit" value="Finish">
+            <input type="submit" value="Finish" class="design_button">
         </form>
     </div>
 
