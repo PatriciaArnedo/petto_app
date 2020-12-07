@@ -369,7 +369,7 @@ statBtns.addEventListener("click", (e) => {
         background.src = "https://i.imgur.com/2IJwIpi.png"
         petImg.style.display = ""
         if (petHunger.value < 100 || petCleanliness.value > 0) {
-            hunger = hunger + 10
+            hunger = hunger - 10
             cleanliness = cleanliness - 10
         }
         petObject = {
@@ -382,10 +382,12 @@ statBtns.addEventListener("click", (e) => {
         if (petEnergy.value > 0 || petCleanliness.value > 0) {
             energy = energy - 10
             cleanliness = cleanliness - 10
+            hunger = hunger + 20
         }
         petObject = {
             energy: energy,
-            cleanliness: cleanliness
+            cleanliness: cleanliness,
+            hunger: hunger
         }
     } else if (e.target.dataset.id === "Clean") {
         background.src = "https://i.imgur.com/2IJwIpi.png"
@@ -406,11 +408,10 @@ statBtns.addEventListener("click", (e) => {
 
         if (petEnergy.value < 100 || petHunger.value > 0) {
             energy = energy + 20
-            hunger = hunger - 20
+            
         }
         petObject = {
             energy: energy,
-            hunger: hunger
         }
     }
     // console.log(petId)

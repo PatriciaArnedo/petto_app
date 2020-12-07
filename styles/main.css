@@ -11,7 +11,7 @@ body {
 .friends-heading{
     background-color: #FED9FF;
     background-image: url("https://i.imgur.com/fvX2d0k.png");
-    padding: 15px 0;
+    padding: 15px 3px;
     font-weight: 800;
     font-size: 32px;
     color: #68c6eb;
@@ -274,6 +274,7 @@ img.petimg{
     margin-left: 15px;
     text-align: center;
     font-weight: bold;
+    height:700px;
 }
     
 .div2 { grid-area: 2 / 3 / 9 / 9; 
@@ -304,6 +305,7 @@ img.petimg{
     margin-left: 5px;
     text-align: center;
     font-weight: bold;
+    height: 254px;
 }
 
 .div5 { grid-area: 1 / 1 / 2 / 11; 
