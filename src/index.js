@@ -213,9 +213,9 @@ const renderPet = (pet) => {
     statsList.innerHTML = ""
     statsList.append(happyLI, hungerLI, energyLI, cleanLI)
     
-    if(pet.happiness >= 50 ){
+    if(pet.happiness >= 50 && pet.hunger < 50){
         petImg.src = pet.happy_img
-    } else if(pet.happiness < 50 ){
+    } else {
         petImg.src = pet.sad_img
     }
     
