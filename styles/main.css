@@ -44,8 +44,9 @@ body {
 
 #username{
     position: absolute;
-    font-size: 32px;
-    margin-right: 25px;
+    font-size: 35px;
+    margin-left: -50px;
+    margin-top: -2px;
     width: 93px;
     color: #68c6eb;
     text-shadow: 0 2px 0 rgb(255, 255, 255);
