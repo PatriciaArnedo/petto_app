@@ -141,7 +141,7 @@ const renderUser = (user) => {
 }
 
 const renderUserPet = (pet) => {
-    petsContainerText.textContent = "Your Pets"
+    petsContainerText.textContent = "Your Petto"
     let petLi = document.createElement("li")
     petLi.textContent = pet.name
     petLi.dataset.id = pet.id
@@ -168,7 +168,10 @@ const renderPet = (pet) => {
     const hungerLI = document.createElement("li")
     const energyLI = document.createElement("li")
     const cleanLI = document.createElement("li")
-    
+    const collectPet = document.querySelector("#collect-petto")
+
+    collectPet.textContent = ""
+
     const petHappiness = document.createElement("progress")
     petHappiness.id = "happy-progress"
     const petHunger = document.createElement("progress")

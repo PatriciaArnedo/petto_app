@@ -13,16 +13,18 @@ body {
     background-image: url("https://i.imgur.com/fvX2d0k.png");
     padding: 15px 0;
     font-weight: 800;
-    font-size: 24px;
+    font-size: 32px;
     color: #68c6eb;
-    text-shadow: 0 2px 0 rgb(109, 108, 108);  
+    text-shadow: 1px 3px 0 rgb(255, 255, 255);  
 }
 #friend-container > li{
-    padding: 15px 0;
-    font-weight: 500;
-    border-bottom: slategray solid;
+    border-bottom: rgb(218, 240, 254) solid;
     border-width: 1px;
-    color: rgb(129, 140, 148);
+    font-weight: 600;
+    font-size: 30px;
+    padding: 25px 0; 
+    color: #ff8fcc;
+    text-shadow: 1px 3px 0 rgb(235, 235, 235);
 }
 
 #friend-container > li:hover{
@@ -30,9 +32,14 @@ body {
 }
 
 #container-title{
-    margin-top: 15px;
-    font-weight: 400;
-    color: rgb(129, 140, 148);
+    padding: 15px 0;
+    font-weight: 600;
+    font-size: 30px;
+    color: #57e4fd;
+    text-shadow: 1px 3px 0 rgb(255, 255, 255);
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
 }
 
 #username{
@@ -41,15 +48,15 @@ body {
     margin-right: 25px;
     width: 93px;
     color: #68c6eb;
-    text-shadow: 0 2px 0 rgb(109, 108, 108);
+    text-shadow: 0 2px 0 rgb(255, 255, 255);
 }
 
 #stats-list > li{
-    padding: 20px 0;
+    padding: 10px 0;
     font-weight: 500;
-    font-size: 16pt;
-    color: rgb(129, 140, 148);
-    text-shadow: 0 2px 0 rgb(193, 197, 197);
+    font-size: 20px; 
+    color: #ff8fcc;
+    text-shadow: 0 2px 0 rgb(228, 227, 227);
     /* border-bottom: solid; */
 }
 
@@ -57,10 +64,9 @@ body {
     background-image: url("https://i.imgur.com/fvX2d0k.png");
     background-color: #FED9FF;
     padding: 15px 0;
-    font-size: 24px;
-    padding: 25px 0; 
+    font-size: 32px;
     color: #68c6eb;
-    text-shadow: 0 2px 0 rgb(109, 108, 108);  
+    text-shadow: 1px 3px 0 rgb(255, 255, 255);  
 
 }
 
@@ -68,16 +74,18 @@ body {
     background-image: url("https://i.imgur.com/fvX2d0k.png");
     background-color: #FED9FF;
     padding: 15px 0;
-    font-size: 24px;
+    font-size: 32px;
     color: #68c6eb;
-    text-shadow: 0 2px 0 rgb(109, 108, 108);  
+    text-shadow: 1px 3px 0 rgb(255, 255, 255);  
 
 }
 
 #pets-container > li{
-    padding: 15px 0;
     font-weight: 600;
-    color: rgb(129, 140, 148);
+    font-size: 30px;
+    padding: 25px 0; 
+    color: #ff8fcc;
+    text-shadow: 1px 3px 0 rgb(206, 204, 204);
 }
 
 #pets-container >li:hover{
@@ -87,7 +95,7 @@ body {
 #actions-title{
     padding: 25px 0;
     font-size: 40pt;
-    color: rgb(238, 168, 255);
+    color: rgb(255, 168, 248);
     text-shadow: 0 5px 0 rgb(109, 108, 108);  
 
 }
@@ -203,10 +211,16 @@ body {
 }
 
 #pet-bio h3{
-    font-size: 18px;
-    text-align: left;
+    font-size: 25px;
+    text-align: center;
     line-height: 1.4em;
-    
+    font-weight: 600;
+    color:  #ffa7c9;
+    text-shadow: 0 2px 0 rgb(221, 219, 219);
+    background-color: rgb(249, 255, 255);
+    border-radius: 10px;
+    margin-top: 15px;
+    box-shadow: 0 2px 0 rgb(221, 219, 219);
 }
 
 
@@ -426,7 +440,7 @@ img.petimg{
     left: 90%;
     z-index: 1;
     position: absolute;
-    
+    cursor: pointer;
 }
 
  /** FORM CSS */
@@ -673,10 +687,38 @@ input#pet5[type=checkbox]:checked + label{
 
 }
 
+/* Collect Pet */
 
+#collect-petto {
+    padding: 15px 0;
+    font-weight: 600;
+    font-size: 45px;
+    color: #57e4fd;
+    text-shadow: 1px 3px 0 rgb(255, 255, 255);
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+}
 
+/* progress bars */
 
-
+progress {
+    
+    border-radius: 7px; 
+    height: 22px;
+    box-shadow: 1px 1px 4px rgba( 0, 0, 0, 0.2 );
+  }
+progress::-webkit-progress-bar {
+    background-color: rgb(252, 183, 243);
+    border-radius: 7px;
+    
+  }
+progress::-webkit-progress-value {
+    background-color: rgb(157, 229, 255);
+    border-radius: 7px;
+    
+}
+  
 
 
 
