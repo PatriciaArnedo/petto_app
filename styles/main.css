@@ -246,6 +246,13 @@ img.petimg{
     
 }
 
+.poop{
+position: absolute;
+max-width: 5%;
+left: 60%;
+top: 80%;
+}
+
 .petbackground{
     width: 100%;
     min-width: 488px;

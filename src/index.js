@@ -171,6 +171,7 @@ const renderPet = (pet) => {
     const energyLI = document.createElement("li")
     const cleanLI = document.createElement("li")
     const collectPet = document.querySelector("#collect-petto")
+    const poop = document.querySelector(".poop")
 
     collectPet.textContent = ""
 
@@ -213,10 +214,16 @@ const renderPet = (pet) => {
     statsList.innerHTML = ""
     statsList.append(happyLI, hungerLI, energyLI, cleanLI)
     
-    if(pet.happiness >= 50 && pet.hunger < 50){
+    if(pet.happiness >= 50 && pet.hunger <= 50){
         petImg.src = pet.happy_img
     } else {
         petImg.src = pet.sad_img
+    }
+
+    if(pet.cleanliness < 50){
+        poop.src = "https://i.imgur.com/7wnY7pc.png"
+    } else{
+        poop.src = ""
     }
     
     bio.textContent = `Bio: ${pet.bio}`
@@ -322,19 +329,21 @@ petList.addEventListener("click", (event) => {
 
 heartIcon.addEventListener("click", () => {
 
+    if (petCurrent.happiness < 100) {
     fetch(`http://localhost:3000/api/pets/${petId}`, {
         method: 'PATCH',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-            happiness: petCurrent.happiness + 20
+            happiness: petCurrent.happiness + 10
         }),
     })
         .then(response => response.json())
         .then(data => {
             renderPet(data)
         })
+    }
 })
 
 
@@ -364,14 +373,17 @@ statBtns.addEventListener("click", (e) => {
     let energy = petEnergy.value
     let happiness = petHappiness.value
     let cleanliness = petCleanliness.value
+    let petObject = {}
 
     if (e.target.dataset.id === "Feed") {
         background.src = "https://i.imgur.com/2IJwIpi.png"
         petImg.style.display = ""
-        if (petHunger.value < 100 || petCleanliness.value > 0) {
-            hunger = hunger - 10
-            cleanliness = cleanliness - 10
-        }
+        hunger = hunger - 10
+        cleanliness = cleanliness - 10
+        
+        if(hunger < 0) hunger = 0
+        if(cleanliness < 0) cleanliness = 0
+
         petObject = {
             hunger: hunger,
             cleanliness: cleanliness
@@ -379,42 +391,51 @@ statBtns.addEventListener("click", (e) => {
     } else if (e.target.dataset.id === "Play") {
         background.src = "https://i.imgur.com/2IJwIpi.png"
         petImg.style.display = ""
-        if (petEnergy.value > 0 || petCleanliness.value > 0) {
-            energy = energy - 10
-            cleanliness = cleanliness - 10
-            hunger = hunger + 20
-        }
+
+        energy = energy - 10
+        cleanliness = cleanliness - 10
+        hunger = hunger + 10
+
+        if(energy < 0) energy = 0
+        if(cleanliness < 0) cleanliness = 0
+        if(hunger > 100) hunger = 100
+
         petObject = {
             energy: energy,
             cleanliness: cleanliness,
             hunger: hunger
         }
+
     } else if (e.target.dataset.id === "Clean") {
         background.src = "https://i.imgur.com/2IJwIpi.png"
         petImg.style.display = ""
-        if (petCleanliness.value < 100 || petHappiness.value > 0) {
-            cleanliness = cleanliness + 20
-            happiness = happiness - 20
-        }
+
+        cleanliness = cleanliness + 10
+        happiness = happiness - 10
+            
+        if(cleanliness > 100) cleanliness = 100
+        if(happiness < 0) happiness = 0
+        
         petObject = {
             cleanliness: cleanliness,
             happiness: happiness
         }
+        
     } else if (e.target.dataset.id === "Rest") {
         background.src = "https://i.imgur.com/Wz3XpV5.png"
         
         petImg.style.display = "none"
         
+        energy = energy + 10
+        
+        if(energy > 100) energy = 100;
 
-        if (petEnergy.value < 100 || petHunger.value > 0) {
-            energy = energy + 20
-            
-        }
         petObject = {
-            energy: energy,
+            energy: energy,     
         }
     }
     // console.log(petId)
+    //debugger
     fetch(`http://localhost:3000/api/pets/${petId}`, {
         method: 'PATCH',
         headers: {
@@ -424,6 +445,7 @@ statBtns.addEventListener("click", (e) => {
     })
         .then(response => response.json())
         .then(newPetData => {
+            console.log(newPetData)
             renderPet(newPetData);
         })
 })
