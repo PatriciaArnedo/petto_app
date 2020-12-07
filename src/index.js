@@ -422,7 +422,7 @@ statBtns.addEventListener("click", (e) => {
         }
         
     } else if (e.target.dataset.id === "Rest") {
-        background.src = "https://i.imgur.com/Wz3XpV5.png"
+        background.src = "https://i.imgur.com/vvPEnOp.gif"
         
         petImg.style.display = "none"
         
