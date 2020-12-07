@@ -33,12 +33,16 @@ usernameSignup.addEventListener("submit", (e)=>{
   e.preventDefault()
 
   const name = usernameSignup.name.value 
+  
+  if(!name){
+    alert("Please enter a username.")
+  } else {
 
-  const userObj = {
-    name: name
-  }
+    const userObj = {
+      name: name
+    }
 
-  fetch(`http://localhost:3000/api/users`, {
+    fetch(`http://localhost:3000/api/users`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -50,8 +54,9 @@ usernameSignup.addEventListener("submit", (e)=>{
             userName = data.name
             userId = data.id
         })
-
-  modal2.style.display = "block"
+        modal2.style.display = "block"
+  }
+  
 })
 
 petSignup.addEventListener("submit", (e)=>{
@@ -59,24 +64,31 @@ petSignup.addEventListener("submit", (e)=>{
   
     petObj.name = petSignup.name.value
     
-  console.log(userId)
-  fetch(`http://localhost:3000/api/pets`, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(petObj),
-    })
-        .then(r => r.json())
-        .then(newPet => {
-          renderPet(newPet)
-          userFetch(userName)
-          allPetFetch()
+    if(!petSignup.name.value){
+      alert("Please choose and name your pet.")
+    } else {
+
+      console.log(userId)
+      fetch(`http://localhost:3000/api/pets`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(petObj),
         })
-        initialize()
-        background.src = "https://i.imgur.com/2IJwIpi.png"
-    modal.style.display = "none"    
-    modal2.style.display = "none"
+            .then(r => r.json())
+            .then(newPet => {
+              renderPet(newPet)
+              userFetch(userName)
+              allPetFetch()
+            })
+            initialize()
+            background.src = "https://i.imgur.com/2IJwIpi.png"
+        modal.style.display = "none"    
+        modal2.style.display = "none"
+    }
+
+
 })
 
 // Hide the form

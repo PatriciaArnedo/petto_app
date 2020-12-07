@@ -88,7 +88,7 @@ const allPetFetch = () => {
           const randomPet = shuffle(cleanArray)
          
           friendList.innerHTML = ""
-          randomPet.slice(0,5).forEach(pet => { 
+          randomPet.slice(0,6).forEach(pet => { 
                 // debugger
                 renderFriend(pet) 
                 })
