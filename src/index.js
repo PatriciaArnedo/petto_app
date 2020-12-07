@@ -58,6 +58,7 @@ const notYourPets = document.querySelectorAll(".notyourpet")
 const bio = document.querySelector("#bio")
 const owner = document.querySelector("#user")
 const deleteUser = document.querySelector('#delete')
+const bioDiv = document.querySelector("#pet-bio")
 
 //-------fetches-------//
 
@@ -130,6 +131,7 @@ function renderButtons(buttonflag) {
         })
         btn.style.display = "none"
     }
+
 }
 
 const renderUser = (user) => {
@@ -222,6 +224,18 @@ const renderPet = (pet) => {
     petTitle.textContent = pet.name
     actionsTitle.textContent = `What Will You Do With ${pet.name}?`
     petCurrent = pet
+
+    //debugger
+    if(!pet.user){
+        bioDiv.style.display = "none"
+    } else {
+        if (pet.user.name == username.textContent){
+            bioDiv.style.display = "none"
+        } else {
+            bioDiv.style.display = ""
+        }
+    }       
+    
 }
 
 const renderFriend = (pet) => {
