@@ -191,6 +191,12 @@ body {
     margin: auto;
 }
 
+.petto-logo {
+    width: 8%;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
 
 /* BACKGROUND / PET / HEART */
 
@@ -476,7 +482,11 @@ img.petimg{
 
 #select-pet h1 {
     margin-bottom: 30px;
-    font-size: 32pt;
+    font-size: 45pt;
+    padding: 10px 0;
+    font-weight: 500;
+    color: #4bdbff;
+    text-shadow: 0 2px 0 rgb(255, 255, 255);
 }
 
 #sign-up{
@@ -493,8 +503,11 @@ img.petimg{
 
 #sign-up  h1 {
     margin-bottom: 30px;
-    font-size: 32pt;
-    
+    font-size: 50pt;
+    padding: 10px 0;
+    font-weight: 500;
+    color: #4bdbff;
+    text-shadow: 0 2px 0 rgb(255, 255, 255);
 }
 
 #modal form input{
@@ -522,7 +535,7 @@ img.petimg{
     position: relative;
     cursor: pointer;
     top: -1px;
-    box-shadow: 0 0 0 1px #E3FDFF inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 3px 0 0 #E3FDFF,0 4px 0 1px rgba(80, 79, 79, 0.4),0 2px 5px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 1px #E3FDFF inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 3px 0 0 #f8b7ef,0 4px 0 1px rgba(80, 79, 79, 0.4),0 2px 5px 1px rgba(0, 0, 0, 0.5);
 }
 
 #create-user:active{
@@ -561,7 +574,7 @@ img.petimg{
     position: relative;
     cursor: pointer;
     top: -1px;
-    box-shadow: 0 0 0 1px #E3FDFF inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 3px 0 0 #E3FDFF,0 4px 0 1px rgba(80, 79, 79, 0.4),0 2px 5px 1px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 1px #E3FDFF inset,0 0 0 2px rgba(255, 255, 255, 0.15) inset,0 3px 0 0 #f8b7ef,0 4px 0 1px rgba(80, 79, 79, 0.4),0 2px 5px 1px rgba(0, 0, 0, 0.5);
 }
 
 #start-button:active{
