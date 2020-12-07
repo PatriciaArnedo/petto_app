@@ -172,6 +172,7 @@ const renderPet = (pet) => {
     const cleanLI = document.createElement("li")
     const collectPet = document.querySelector("#collect-petto")
     const poop = document.querySelector(".poop")
+    const foodBowl = document.querySelector(".food-bowl")
 
     collectPet.textContent = ""
 
@@ -218,6 +219,12 @@ const renderPet = (pet) => {
         petImg.src = pet.happy_img
     } else {
         petImg.src = pet.sad_img
+    }
+
+    if(pet.hunger >=50){
+        foodBowl.src = "https://i.imgur.com/VODcF31.png"
+    } else {
+        foodBowl.src = ""
     }
 
     if(pet.cleanliness < 50){
@@ -368,6 +375,7 @@ statBtns.addEventListener("click", (e) => {
     const petEnergy = document.querySelector("#energy-progress")
     const petHappiness = document.querySelector("#happy-progress")
     const petImg = document.querySelector(".petimg")
+    const foodBowl = document.querySelector(".food-bowl")
 
     let hunger = petHunger.value
     let energy = petEnergy.value
@@ -378,6 +386,7 @@ statBtns.addEventListener("click", (e) => {
     if (e.target.dataset.id === "Feed") {
         background.src = "https://i.imgur.com/2IJwIpi.png"
         petImg.style.display = ""
+        foodBowl.style.display = ""
         hunger = hunger - 10
         cleanliness = cleanliness - 10
         
@@ -391,6 +400,7 @@ statBtns.addEventListener("click", (e) => {
     } else if (e.target.dataset.id === "Play") {
         background.src = "https://i.imgur.com/2IJwIpi.png"
         petImg.style.display = ""
+        foodBowl.style.display = ""
 
         energy = energy - 10
         cleanliness = cleanliness - 10
@@ -409,6 +419,7 @@ statBtns.addEventListener("click", (e) => {
     } else if (e.target.dataset.id === "Clean") {
         background.src = "https://i.imgur.com/2IJwIpi.png"
         petImg.style.display = ""
+        foodBowl.style.display = ""
 
         cleanliness = cleanliness + 10
         happiness = happiness - 10
@@ -423,6 +434,7 @@ statBtns.addEventListener("click", (e) => {
         
     } else if (e.target.dataset.id === "Rest") {
         background.src = "https://i.imgur.com/vvPEnOp.gif"
+        foodBowl.style.display = "none"
         
         petImg.style.display = "none"
         

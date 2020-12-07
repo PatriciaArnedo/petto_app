@@ -253,6 +253,13 @@ left: 60%;
 top: 80%;
 }
 
+.food-bowl{
+    position: absolute;
+    max-width: 12%;
+    left: 36%;
+    top: 30%;  
+}
+
 .petbackground{
     width: 100%;
     min-width: 488px;
