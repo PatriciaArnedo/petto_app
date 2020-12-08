@@ -5,7 +5,7 @@ function sound(src) {
     this.sound.setAttribute("preload", "auto");
     this.sound.setAttribute("controls", "none");
     this.sound.style.display = "none";
-    this.sound.volume = 0.05;
+    this.sound.volume = 0.07;
     document.body.appendChild(this.sound);
     this.play = function(){
         this.sound.play();
@@ -221,7 +221,7 @@ const renderPet = (pet) => {
         petImg.src = pet.sad_img
     }
 
-    if(pet.hunger >=50){
+    if(pet.hunger > 50){
         foodBowl.src = "https://i.imgur.com/VODcF31.png"
     } else {
         foodBowl.src = ""
