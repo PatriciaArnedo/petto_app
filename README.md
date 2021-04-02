@@ -7,7 +7,7 @@ Welcome to Petto! (pronounced pet-toh, from the japanese word for pet.) Petto is
 Here is a sample of the Petto interface:
 <br>
 
-<img src=https://i.imgur.com/U0IlFiO.gif/>
+<img src="https://media.giphy.com/media/VPrDxAtqK9alxZroCh/giphy.gif"/>
 <br><br>
 <h3>User Stories</h3>
 
